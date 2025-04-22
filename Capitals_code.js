@@ -64,7 +64,7 @@ function extractSelectedText(selection) {
  * @returns {string|null} - El texto paráfraseado retornado por la API o null en caso de error.
  */
 function getParaphrasedText(text, type) {
-  var API_KEY = "AIzaSyAvfrg8OUtcZbt-1TA7AKzhL73fNqtB7dk"; // Reemplaza con tu API Key válida.
+  var API_KEY = "YOUR_API_KEY_HERE"; // Reemplaza con tu API Key válida.
   var geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + API_KEY;
   
   var promptText;
