@@ -68,14 +68,14 @@ function onOpen() {
     var geminiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + API_KEY;
     
     var promptText;
-      if (type === "paraphrase"){
-          promptText = "Parafrasea el siguiente enunciado corrigiendo la gramática y la sintaxis, resaltando un logro de aprendizaje adquirido por jóvenes aprendices de teatro. El resultado debe presentarse en un único párrafo que inicie directamente con máximo dos verbos formulados en presente y en plural, elegidos entre los siguientes: analizar, clasificar, comparar, comprender, comprobar, conocer, definir, demostrar, describir, diferenciar, distinguir, elegir, enumerar, evaluar, explicar, expresar, generalizar, identificar, inducir, inferir, localizar, memorizar, planear, razonar, reconocer, recordar, resolver, relacionar, sintetizar, señalar. Este logro debe introducir una oración clara que exprese lo que los participantes han alcanzado conceptualmente seguido de ejemplos vivenciales concretos que ilustren dicho logro, describiendo cómo los participantes reflexionan sobre uno de estos temas; autoestima, identidad cultural, comunicación. Identificando y analizando creativamente situaciones relevantes de su realidad para transformarlas en expresiones teatrales. Mantén el sentido original del texto, pero mejora su claridad, coherencia y precisión."
-          + "\n\nTexto original:\n" + text;
-      }
+    if (type === "paraphrase") {
+      promptText = "Parafrasea el siguiente enunciado corrigiendo la gramática y la sintaxis, resaltando un logro de aprendizaje adquirido por jóvenes aprendices de teatro. El resultado debe presentarse en un único párrafo que inicie directamente con máximo dos verbos formulados en presente y en plural, elegidos entre los siguientes: analizar, clasificar, comparar, comprender, comprobar, conocer, definir, demostrar, describir, diferenciar, distinguir, elegir, enumerar, evaluar, explicar, expresar, generalizar, identificar, inducir, inferir, localizar, memorizar, planear, razonar, reconocer, recordar, resolver, relacionar, sintetizar, señalar. Este logro debe introducir una oración clara que exprese lo que los participantes han alcanzado conceptualmente seguido de ejemplos vivenciales concretos que ilustren dicho logro, describiendo cómo los participantes reflexionan sobre uno de estos temas; autoestima, identidad cultural, comunicación. Identificando y analizando creativamente situaciones relevantes de su realidad para transformarlas en expresiones teatrales. Mantén el sentido original del texto, pero mejora su claridad, coherencia y precisión."
+        + "\n\nTexto original:\n" + text;
+    } else if (type === "translate") {
+      promptText = "traduceme el siguiente texto: " + text
+    }
     
-    
-    if (!promptText) return
-    
+    if (!promptText) return;
     
     var payload = {
       
@@ -145,4 +145,3 @@ function onOpen() {
           .editAsText().setForegroundColor("#0000FF");
     }
   }
-  
